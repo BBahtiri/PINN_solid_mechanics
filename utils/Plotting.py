@@ -32,48 +32,6 @@ def plot_pts(Xint, Xbnd):
     plt.show()
     
     
-def plot_solution(numPtsUTest, numPtsVTest, domain, pred_model, data_type):
-    xPhysTest, yPhysTest = domain.getUnifIntPts(numPtsUTest, numPtsVTest, [1,1,1,1])
-    XTest = np.concatenate((xPhysTest,yPhysTest),axis=1).astype(data_type)
-    XTest_tf = tf.convert_to_tensor(XTest)
-    YTest = pred_model(XTest_tf).numpy()    
-   # YExact = exact_sol(XTest[:,[0]], XTest[:,[1]])
-
-    xPhysTest2D = np.resize(XTest[:,0], [numPtsUTest, numPtsVTest])
-    yPhysTest2D = np.resize(XTest[:,1], [numPtsUTest, numPtsVTest])
-    #YExact2D = np.resize(YExact, [numPtsUTest, numPtsVTest])
-    YTest2D = np.resize(YTest, [numPtsUTest, numPtsVTest])
-    # plt.contourf(xPhysTest2D, yPhysTest2D, YExact2D, 255, cmap=plt.cm.jet)
-    # plt.colorbar()
-    # plt.title("Exact solution")
-    # plt.show()
-    plt.contourf(xPhysTest2D, yPhysTest2D, YTest2D, 255, cmap=plt.cm.jet)
-    plt.colorbar()
-    plt.title("Computed solution")
-    plt.show()
-
-
-def plot_solution_2d_elast(numPtsUTest, numPtsVTest, domain, pred_model, data_type):
-    xPhysTest, yPhysTest = domain.getUnifIntPts(numPtsUTest, numPtsVTest, [1,1,1,1])
-    XTest = np.concatenate((xPhysTest,yPhysTest),axis=1).astype(data_type)
-    XTest_tf = tf.convert_to_tensor(XTest)
-    YTest = pred_model(XTest_tf).numpy()    
-   # YExact = exact_sol(XTest[:,[0]], XTest[:,[1]])
-
-    xPhysTest2D = np.resize(XTest[:,0], [numPtsUTest, numPtsVTest])
-    yPhysTest2D = np.resize(XTest[:,1], [numPtsUTest, numPtsVTest])
-    #YExact2D = np.resize(YExact, [numPtsUTest, numPtsVTest])
-    YTest2D = np.resize(YTest, [numPtsUTest, numPtsVTest])
-    # plt.contourf(xPhysTest2D, yPhysTest2D, YExact2D, 255, cmap=plt.cm.jet)
-    # plt.colorbar()
-    # plt.title("Exact solution")
-    # plt.show()
-    plt.contourf(xPhysTest2D, yPhysTest2D, YTest2D, 255, cmap=plt.cm.jet)
-    plt.colorbar()
-    plt.title("Computed solution")
-    plt.show()
-    
-    
     
 def plot_field_2d(Xpts,field, numPtsU, numPtsV, figHeight, figWidth, title=""):
     '''
