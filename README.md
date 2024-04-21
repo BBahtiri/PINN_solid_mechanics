@@ -5,4 +5,4 @@ We utilize physics informed neural networks to solve the equilibrium equation fo
 
 The figure below presents the architecture of our PINN.
 
-![This is an image](/pinn.PNG)
+![This is an image](/pinn.png)
