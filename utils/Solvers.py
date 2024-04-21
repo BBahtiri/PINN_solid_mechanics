@@ -12,7 +12,6 @@ import math
 from datetime import datetime
 from packaging import version
 import tensorboard as tb
-from utils.DL_model import DL
  
 class Hyperelasticity2D_coll_dist(tf.keras.Model): 
     def __init__(self,layers, train_op, num_epoch, print_epoch, model_data, data_type,length_phys,length_phys_bnd):
