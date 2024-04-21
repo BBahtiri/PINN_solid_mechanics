@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-2D linear elasticity example
+2D hyperelasticity example
 """
 import sys
 import tensorflow as tf
